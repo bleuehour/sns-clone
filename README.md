@@ -1,6 +1,6 @@
 # Social network site 
 
-![image](https://user-images.githubusercontent.com/76443837/164777580-19568963-6634-40fb-a895-da4175316d38.png)
+![image](https://user-images.githubusercontent.com/76443837/167232593-51ea8644-2c4e-4568-8d90-a00932b5e74b.png)
 
 # Summary 
 - social network app similar to reddit
