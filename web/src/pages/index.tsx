@@ -36,19 +36,25 @@ const Index = () => {
         <Stack spacing={8}>
           {data!.posts.posts.map((p) =>
             !p ? null : (
-              <Flex key={p._id} shadow="md" borderWidth="1px">
+              <Flex key={p._id} p={5} shadow="md" borderWidth="1px">
                 <UpdootSection post={p} />
-                <Box>
+                <Box flex={1}>
                   <NextLink href="/post/[_id]" as={`/post/${p._id}`}>
                     <Link>
                       <Heading fontSize="xl">{p.title}</Heading>
                     </Link>
                   </NextLink>
                   <Text>posted by {p.creator.username}</Text>
-                  <Text mt={4}>{p.textSnippet}</Text>
-                  {Medata?.me?._id !== p.creator._id ? null : (
-                    <EditDeletePostButtons _id={p._id} />
-                  )}
+                  <Flex align="center">
+                    <Text flex={1} mt={4}>
+                      {p.textSnippet}
+                    </Text>
+                    <Box ml="auto">
+                      {Medata?.me?._id !== p.creator._id ? null : (
+                        <EditDeletePostButtons _id={p._id} />
+                      )}
+                    </Box>
+                  </Flex>
                 </Box>
               </Flex>
             )

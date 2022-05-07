@@ -1,6 +1,6 @@
 import { IconButton } from "@chakra-ui/button";
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { Box } from "@chakra-ui/layout";
+import { Flex, Icon } from "@chakra-ui/react";
 import React, { useState } from "react";
 import {
   PostSnippetFragment,
@@ -18,7 +18,13 @@ export const UpdootSection: React.FC<UpdootSectionProps> = ({ post }) => {
   >();
   const [, vote] = useVoteMutation();
   return (
-    <Box>
+    <Flex
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      mr={4}
+      padding="1"
+    >
       <IconButton
         onClick={async () => {
           setLoadingState("updoot-loading");
@@ -50,6 +56,6 @@ export const UpdootSection: React.FC<UpdootSectionProps> = ({ post }) => {
         icon={<ChevronDownIcon />}
         color={post.voteStatus === -1 ? "red" : undefined}
       />
-    </Box>
+    </Flex>
   );
 };
